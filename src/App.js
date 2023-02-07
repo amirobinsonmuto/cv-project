@@ -1,4 +1,4 @@
-import InputBasic from "./components/Input";
+import Input from "./components/Input";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       </header>
       <main>
         <section>
-          <InputBasic />
+          <Input />
         </section>
       </main>
     </div>
