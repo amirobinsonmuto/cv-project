@@ -1,5 +1,6 @@
 import BasicInfoInput from "./components/Input/BasicInfoInput";
 import EducationInput from "./components/Input/EducationInput";
+import ExperienceInput from "./components/Input/ExperienceInput";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <main>
         <BasicInfoInput />
+        <ExperienceInput />
         <EducationInput />
       </main>
     </div>
