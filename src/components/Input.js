@@ -1,7 +1,7 @@
 import React from "react";
-import OutputBasic from "./OutputBasic";
+import Output from "./Output";
 
-class InputBasic extends React.Component {
+class Input extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -54,7 +54,7 @@ class InputBasic extends React.Component {
           />
           <button type="submit">Display</button>
         </form>
-        <OutputBasic
+        <Output
           name={this.state.name}
           email={this.state.email}
           phone={this.state.phone}
@@ -64,4 +64,4 @@ class InputBasic extends React.Component {
   }
 }
 
-export default InputBasic;
+export default Input;

@@ -1,4 +1,4 @@
-import InputBasic from "./components/InputBasic";
+import InputBasic from "./components/Input";
 
 function App() {
   return (
