@@ -1,4 +1,5 @@
-import Input from "./components/Input/BasicInfoInput";
+import BasicInfoInput from "./components/Input/BasicInfoInput";
+import EducationInput from "./components/Input/EducationInput";
 
 function App() {
   return (
@@ -7,9 +8,8 @@ function App() {
         <h1>CV Editor</h1>
       </header>
       <main>
-        <section>
-          <Input />
-        </section>
+        <BasicInfoInput />
+        <EducationInput />
       </main>
     </div>
   );
