@@ -1,6 +1,7 @@
 import BasicInfoInput from "./components/Input/BasicInfoInput";
 import EducationInput from "./components/Input/EducationInput";
 import ExperienceInput from "./components/Input/ExperienceInput";
+import "./styles/app.css";
 
 function App() {
   return (

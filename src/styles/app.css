@@ -1,0 +1,9 @@
+input {
+  display: block;
+}
+
+/* Styling while development */
+section {
+  display: flex;
+  gap: 20px;
+}
