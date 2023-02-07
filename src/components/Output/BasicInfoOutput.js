@@ -1,6 +1,6 @@
 import React from "react";
 
-class Output extends React.Component {
+class BasicInfoOutput extends React.Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class Output extends React.Component {
   }
 }
 
-export default Output;
+export default BasicInfoOutput;
