@@ -5,24 +5,26 @@ class EducationInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      school: "",
-      program: "",
-      graduationYear: "",
+      education: {
+        school: "",
+        program: "",
+        graduationYear: "",
+      },
     };
   }
 
   handleChange = (event) => {
     if (event.target.id === "school") {
       this.setState({
-        school: event.target.value,
+        education: { school: event.target.value },
       });
     } else if (event.target.id === "program") {
       this.setState({
-        program: event.target.value,
+        education: { program: event.target.value },
       });
     } else {
       this.setState({
-        graduationYear: event.target.value,
+        education: { graduationYear: event.target.value },
       });
     }
   };
@@ -33,32 +35,22 @@ class EducationInput extends React.Component {
         <section>
           <form>
             <label htmlFor="school">school</label>
-            <input
-              type="text"
-              id="school"
-              onChange={this.handleChange}
-              value={this.state.school.text}
-            />
+            <input type="text" id="school" onChange={this.handleChange} />
             <label htmlFor="program">program</label>
-            <input
-              type="text"
-              id="program"
-              onChange={this.handleChange}
-              value={this.state.program.text}
-            />
+            <input type="text" id="program" onChange={this.handleChange} />
             <label htmlFor="graduationYear">graduationYear</label>
             <input
               type="text"
               id="graduationYear"
               onChange={this.handleChange}
-              value={this.state.graduationYear.text}
             />
           </form>
           <EducationOutput
-            school={this.state.school}
-            program={this.state.program}
-            graduationYear={this.state.graduationYear}
+            school={this.state.education.school}
+            program={this.state.education.program}
+            graduationYear={this.state.education.graduationYear}
           />
+          <button>Add education</button>
         </section>
       </div>
     );

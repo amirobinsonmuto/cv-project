@@ -57,49 +57,42 @@ class ExperienceInput extends React.Component {
               type="text"
               id="organization"
               onChange={this.handleChange}
-              value={this.state.organization.text}
             />
             <label htmlFor="title">title</label>
             <input
               type="text"
               id="title"
               onChange={this.handleChange}
-              value={this.state.title.text}
             />
             <label htmlFor="description">description</label>
             <input
               type="text"
               id="description"
               onChange={this.handleChange}
-              value={this.state.description.text}
             />
             <label htmlFor="startMonth">startMonth</label>
             <input
               type="text"
               id="startMonth"
               onChange={this.handleChange}
-              value={this.state.startMonth.text}
             />
             <label htmlFor="startYear">startYear</label>
             <input
               type="text"
               id="startYear"
               onChange={this.handleChange}
-              value={this.state.startYear.text}
             />
             <label htmlFor="endMonth">endMonth</label>
             <input
               type="text"
               id="endMonth"
               onChange={this.handleChange}
-              value={this.state.endMonth.text}
             />
             <label htmlFor="endYear">endYear</label>
             <input
               type="text"
               id="endYear"
               onChange={this.handleChange}
-              value={this.state.endYear.text}
             />
           </form>
           <ExperienceOutput

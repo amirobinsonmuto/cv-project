@@ -37,21 +37,18 @@ class BasicInfoInput extends React.Component {
               type="text"
               id="name"
               onChange={this.handleChange}
-              value={this.state.name.text}
             />
             <label htmlFor="email">email</label>
             <input
               type="text"
               id="email"
               onChange={this.handleChange}
-              value={this.state.email.text}
             />
             <label htmlFor="phone">phone</label>
             <input
               type="text"
               id="phone"
               onChange={this.handleChange}
-              value={this.state.phone.text}
             />
           </form>
 
