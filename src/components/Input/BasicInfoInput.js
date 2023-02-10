@@ -29,35 +29,21 @@ class BasicInfoInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <section>
-          <form>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="email">email</label>
-            <input
-              type="text"
-              id="email"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="phone">phone</label>
-            <input
-              type="text"
-              id="phone"
-              onChange={this.handleChange}
-            />
-          </form>
+      <div className="form-output">
+        <form>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" onChange={this.handleChange} />
+          <label htmlFor="email">email</label>
+          <input type="text" id="email" onChange={this.handleChange} />
+          <label htmlFor="phone">phone</label>
+          <input type="text" id="phone" onChange={this.handleChange} />
+        </form>
 
-          <BasicInfoOutput
-            name={this.state.name}
-            email={this.state.email}
-            phone={this.state.phone}
-          />
-        </section>
+        <BasicInfoOutput
+          name={this.state.name}
+          email={this.state.email}
+          phone={this.state.phone}
+        />
       </div>
     );
   }

@@ -18,16 +18,12 @@ class EducationInput extends React.Component {
     console.log(this.state.educationFormList);
   };
 
-  addOutput = () => {};
-
   render() {
     return (
       <div>
-        <section>
-          <button onClick={this.addForm}>New education</button>
-          {this.state.educationFormList}
-          {/* <EducationOutput educationList={this.state.educationList} /> */}
-        </section>
+        <button onClick={this.addForm}>New education</button>
+        {this.state.educationFormList}
+        {/* <EducationOutput educationList={this.state.educationList} /> */}
       </div>
     );
   }

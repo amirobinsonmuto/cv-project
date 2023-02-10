@@ -48,7 +48,7 @@ class EducationForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form-output">
         <form>
           <label htmlFor="school">school</label>
           <input type="text" id="school" onChange={this.handleChange} />
