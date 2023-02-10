@@ -5,9 +5,9 @@ class Resume extends React.Component {
     return (
       <section className="resume">
         <div className="basic-info-output-area">
-          <h2>Name</h2>
-          <h3>Email</h3>
-          <h3>Phone</h3>
+          <h2 className="name-output">{this.props.name}</h2>
+          <h3 className="email-output">{this.props.email}</h3>
+          <h3 className="phone-output">{this.props.phone}</h3>
         </div>
         <div className="work-experience-output-area">
           <h2>Work Experience</h2>

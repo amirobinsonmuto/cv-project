@@ -1,5 +1,5 @@
 import React from "react";
-import BasicInfoOutput from "../output/BasicInfoOutput";
+import Resume from "../output/resume";
 
 class BasicInfoInput extends React.Component {
   constructor() {
@@ -27,6 +27,8 @@ class BasicInfoInput extends React.Component {
     }
   };
 
+  const;
+
   render() {
     return (
       <div className="form-output">
@@ -39,7 +41,7 @@ class BasicInfoInput extends React.Component {
           <input type="text" id="phone" onChange={this.handleChange} />
         </form>
 
-        <BasicInfoOutput
+        <Resume
           name={this.state.name}
           email={this.state.email}
           phone={this.state.phone}

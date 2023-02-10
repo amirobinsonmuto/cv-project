@@ -16,7 +16,6 @@ function App() {
           <WorkExperienceInput />
           <EducationInput />
         </section>
-        <Resume />
       </main>
     </div>
   );
