@@ -1,14 +1,10 @@
 main {
   display: flex;
+  gap: 20px;
 }
 
 input {
   display: block;
-}
-
-.form-output {
-  display: flex;
-  gap: 20px;
 }
 
 .input-section {

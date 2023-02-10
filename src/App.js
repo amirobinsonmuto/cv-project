@@ -10,13 +10,7 @@ function App() {
       <header className="App-header">
         <h1>CV Editor</h1>
       </header>
-      <main>
-        <section class="input-section">
-          <BasicInfoInput />
-          <WorkExperienceInput />
-          <EducationInput />
-        </section>
-      </main>
+      <BasicInfoInput />
     </div>
   );
 }

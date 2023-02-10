@@ -23,7 +23,6 @@ class EducationInput extends React.Component {
       <div>
         <button onClick={this.addForm}>New education</button>
         {this.state.educationFormList}
-        {/* <EducationOutput educationList={this.state.educationList} /> */}
       </div>
     );
   }
