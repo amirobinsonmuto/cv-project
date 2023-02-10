@@ -21,8 +21,19 @@ input {
   height: 297mm;
   position: sticky;
   top: 10px;
-  display: grid;
-  grid-template-columns: 150mm 60mm;
-  grid-template-rows: 35mm 262mm;
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  padding: 2rem;
+}
+
+.basic-info-output-area {
+  height: 35mm;
+  border-bottom: 1px solid blue;
+}
+
+.work-experience-output-area {
+  border-bottom: 1px solid blue;
+}
+
+.education-output-area {
+  border-bottom: 1px solid blue;
 }
