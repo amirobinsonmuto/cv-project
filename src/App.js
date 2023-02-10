@@ -1,6 +1,7 @@
-import BasicInfoInput from "./components/Input/BasicInfoInput";
-import EducationInput from "./components/Input/EducationInput";
-import WorkExperienceInput from "./components/Input/WorkExperienceInput";
+import BasicInfoInput from "./components/input/BasicInfoInput";
+import EducationInput from "./components/input/EducationInput";
+import WorkExperienceInput from "./components/input/WorkExperienceInput";
+import Resume from "./components/output/resume";
 import "./styles/app.css";
 
 function App() {
@@ -10,9 +11,12 @@ function App() {
         <h1>CV Editor</h1>
       </header>
       <main>
-        <BasicInfoInput />
-        <WorkExperienceInput />
-        <EducationInput />
+        <section class="input-section">
+          <BasicInfoInput />
+          <WorkExperienceInput />
+          <EducationInput />
+        </section>
+        <Resume />
       </main>
     </div>
   );
