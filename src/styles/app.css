@@ -2,4 +2,7 @@ input {
   display: block;
 }
 
-
+.form-output {
+  display: flex;
+  gap: 20px;
+}
