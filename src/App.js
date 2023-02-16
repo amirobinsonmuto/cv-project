@@ -1,11 +1,19 @@
 import Header from "./components/Header";
+import AddPersonalInfo from "./components/AddPersonalInfo";
+import PersonalInfo from "./components/PersonalInfo";
 import WorkExperiences from "./components/WorkExperiences";
 import { useState } from "react";
 import AddWorkExperience from "./components/AddWorkExperience";
 
 function App() {
+  const [personalInfo, setPersonalInfo] = useState("");
   const [showAddWorkExperience, setShowAddWorkExperience] = useState(false);
   const [workExperiences, setWorkExperiences] = useState("");
+
+  // Add personal info
+  const addPersonalInfo = (personalInfo) => {
+    setPersonalInfo(personalInfo);
+  };
 
   // Delete work experience
   const deleteWorkExperience = (id) => {
@@ -25,7 +33,9 @@ function App() {
   return (
     <div className="container">
       <div className="forms">
-        <h2>Enter Your Information</h2>
+        <p>Enter Your Information</p>
+        <h2>Personal Information</h2>
+        <AddPersonalInfo onAdd={addPersonalInfo} />
         <Header
           title="Work Experience"
           onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
@@ -35,7 +45,9 @@ function App() {
           <AddWorkExperience onAdd={addWorkExperience} />
         )}
       </div>
+
       <div className="resume">
+        <PersonalInfo personalInfo={personalInfo} />
         <h2>Work Experience</h2>
         {workExperiences.length > 0 ? (
           <WorkExperiences
