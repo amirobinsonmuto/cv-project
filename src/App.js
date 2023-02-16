@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddWorkExperience from "./components/AddWorkExperience";
 
 function App() {
+  const [showAddWorkExperience, setShowAddWorkExperience] = useState(false);
   const [workExperiences, setWorkExperiences] = useState("");
 
   // Delete work experience
@@ -23,8 +24,12 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddWorkExperience onAdd={addWorkExperience} />
+      <Header
+        title="Work Experience"
+        onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
+        showAdd={showAddWorkExperience}
+      />
+      {showAddWorkExperience && <AddWorkExperience onAdd={addWorkExperience} />}
       {workExperiences.length > 0 ? (
         <WorkExperiences
           workExperiences={workExperiences}
