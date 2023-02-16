@@ -24,20 +24,27 @@ function App() {
 
   return (
     <div className="container">
-      <Header
-        title="Work Experience"
-        onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
-        showAdd={showAddWorkExperience}
-      />
-      {showAddWorkExperience && <AddWorkExperience onAdd={addWorkExperience} />}
-      {workExperiences.length > 0 ? (
-        <WorkExperiences
-          workExperiences={workExperiences}
-          onDelete={deleteWorkExperience}
+      <div className="forms">
+        <Header
+          title="Work Experience"
+          onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
+          showAdd={showAddWorkExperience}
         />
-      ) : (
-        "No work experience"
-      )}
+        {showAddWorkExperience && (
+          <AddWorkExperience onAdd={addWorkExperience} />
+        )}
+      </div>
+      <div className="resume">
+        <h2>Work Experience</h2>
+        {workExperiences.length > 0 ? (
+          <WorkExperiences
+            workExperiences={workExperiences}
+            onDelete={deleteWorkExperience}
+          />
+        ) : (
+          "No work experience"
+        )}
+      </div>
     </div>
   );
 }

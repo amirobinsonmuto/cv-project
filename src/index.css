@@ -11,13 +11,25 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  display: flex;
+}
+
+.forms {
   margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  width: 30vw;
+}
+
+.resume {
+  margin: 30px auto;
+  overflow: auto;
+  width: 210mm;
+  height: 297mm;
+  position: sticky;
+  padding: 30px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
 .header {
@@ -59,10 +71,6 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
-}
-
-.task.reminder {
-  border-left: 5px solid green;
 }
 
 .task h3 {
