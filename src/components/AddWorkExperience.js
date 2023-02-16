@@ -42,11 +42,12 @@ const AddWorkExperience = ({ onAdd }) => {
           onChange={(e) => setOrganization(e.target.value)}
         />
         <label htmlFor="">Description</label>
-        <input
-          type="text"
+        <textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          cols="50"
+          rows="10"
         />
         <label htmlFor="">Start date</label>
         <input

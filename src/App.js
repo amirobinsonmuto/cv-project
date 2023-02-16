@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="container">
       <div className="forms">
+        <h2>Enter Your Information</h2>
         <Header
           title="Work Experience"
           onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}

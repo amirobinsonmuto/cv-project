@@ -99,6 +99,14 @@ body {
   font-size: 17px;
 }
 
+.form-control textarea {
+  width: 100%;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+}
+
 .form-control-check {
   display: flex;
   align-items: center;
