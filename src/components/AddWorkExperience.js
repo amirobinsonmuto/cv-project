@@ -27,21 +27,18 @@ const AddWorkExperience = ({ onAdd }) => {
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
-        <label htmlFor="">Position</label>
         <input
           type="text"
           placeholder="Position"
           value={position}
           onChange={(e) => setPosition(e.target.value)}
         />
-        <label htmlFor="">Organization</label>
         <input
           type="text"
           placeholder="Organization"
           value={organization}
           onChange={(e) => setOrganization(e.target.value)}
         />
-        <label htmlFor="">Description</label>
         <textarea
           placeholder="Description"
           value={description}
