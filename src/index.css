@@ -126,3 +126,8 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+.education-resume-section {
+  display: flex;
+  gap: 2rem;
+}
