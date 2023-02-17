@@ -66,19 +66,6 @@ body {
   width: 100%;
 }
 
-.task {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .add-form {
   margin-bottom: 40px;
 }
@@ -130,4 +117,10 @@ footer {
 .education-resume-section {
   display: flex;
   gap: 2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -1,10 +1,10 @@
 import Education from "./Education";
 
-const Educations = ({ educations }) => {
+const Educations = ({ educations, onDelete }) => {
   return (
     <>
       {educations.map((education) => (
-        <Education education={education} />
+        <Education education={education} onDelete={onDelete} />
       ))}
     </>
   );

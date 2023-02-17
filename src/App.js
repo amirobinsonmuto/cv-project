@@ -26,6 +26,11 @@ function App() {
     );
   };
 
+  // Delete education
+  const deleteEducation = (id) => {
+    setEducations(educations.filter((education) => education.id !== id));
+  };
+
   // Add work experience
   const addWorkExperience = (workExperience) => {
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -77,7 +82,7 @@ function App() {
         )}
         <h2>Education</h2>
         {educations.length > 0 ? (
-          <Educations educations={educations} />
+          <Educations educations={educations} onDelete={deleteEducation} />
         ) : (
           "No education"
         )}
