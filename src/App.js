@@ -5,13 +5,15 @@ import AddEducation from "./components/AddEducation";
 import PersonalInfo from "./components/PersonalInfo";
 import WorkExperiences from "./components/WorkExperiences";
 import Educations from "./components/Educations";
+import Button from "./components/Button";
 import { useState } from "react";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState("");
   const [showAddWorkExperience, setShowAddWorkExperience] = useState(false);
-  const [showAddEducation, setShowAddEducation] = useState(false);
   const [workExperiences, setWorkExperiences] = useState("");
+  const [workExperienceForms, setWorkExperienceForms] = useState([]);
+  const [showAddEducation, setShowAddEducation] = useState(false);
   const [educations, setEducations] = useState("");
 
   // Add personal info
@@ -29,6 +31,18 @@ function App() {
   // Delete education
   const deleteEducation = (id) => {
     setEducations(educations.filter((education) => education.id !== id));
+  };
+
+  // Add work experience form
+  const addWorkExperienceForm = () => {
+    setWorkExperienceForms(
+      workExperienceForms.concat(
+        <AddWorkExperience
+          key={workExperienceForms.length}
+          onAdd={addWorkExperience}
+        />
+      )
+    );
   };
 
   // Add work experience
@@ -58,9 +72,14 @@ function App() {
           onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
           showAdd={showAddWorkExperience}
         />
-        {showAddWorkExperience && (
-          <AddWorkExperience onAdd={addWorkExperience} />
-        )}
+        {workExperienceForms}
+        <Button
+          color="green"
+          className="btn btn-block"
+          text="Add"
+          onClick={addWorkExperienceForm}
+        />
+
         <Header
           title="Education"
           onAdd={() => setShowAddEducation(!showAddEducation)}
