@@ -56,13 +56,6 @@ function App() {
     // edit if the item already exist
   };
 
-  // Delete work experience
-  // const deleteWorkExperience = (id) => {
-  //   setWorkExperiences(
-  //     workExperiences.filter((workExperience) => workExperience.id !== id)
-  //   );
-  // };
-
   // Add education
   const addEducation = (education) => {
     const id = Math.floor(Math.random() * 10000) + 1;
