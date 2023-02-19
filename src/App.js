@@ -43,7 +43,9 @@ function App() {
         (workExperienceForm) => workExperienceForm.key !== id
       )
     );
-    console.log(id);
+    setWorkExperiences(
+      workExperiences.filter((workExperience) => workExperience.id !== id)
+    );
   };
 
   // Add work experience
@@ -55,11 +57,11 @@ function App() {
   };
 
   // Delete work experience
-  const deleteWorkExperience = (id) => {
-    setWorkExperiences(
-      workExperiences.filter((workExperience) => workExperience.id !== id)
-    );
-  };
+  // const deleteWorkExperience = (id) => {
+  //   setWorkExperiences(
+  //     workExperiences.filter((workExperience) => workExperience.id !== id)
+  //   );
+  // };
 
   // Add education
   const addEducation = (education) => {
@@ -101,10 +103,7 @@ function App() {
         <PersonalInfo personalInfo={personalInfo} />
         <h2>Work Experience</h2>
         {workExperiences.length > 0 ? (
-          <WorkExperiences
-            workExperiences={workExperiences}
-            onDelete={deleteWorkExperience}
-          />
+          <WorkExperiences workExperiences={workExperiences} />
         ) : (
           "No work experience"
         )}

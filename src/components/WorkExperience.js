@@ -8,10 +8,6 @@ const WorkExperience = ({ workExperience, onDelete }) => {
         <p>
           {workExperience.startDate} - {workExperience.endDate}
         </p>
-        <FaTimes
-          onClick={() => onDelete(workExperience.id)}
-          style={{ color: "red", cursor: "pointer" }}
-        />
       </div>
       <h4>{workExperience.organization}</h4>
       <p>{workExperience.description}</p>
