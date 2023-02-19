@@ -10,11 +10,11 @@ import { useState } from "react";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState("");
-  const [showAddWorkExperience, setShowAddWorkExperience] = useState(false);
   const [workExperiences, setWorkExperiences] = useState("");
   const [workExperienceForms, setWorkExperienceForms] = useState([]);
   const [showAddEducation, setShowAddEducation] = useState(false);
   const [educations, setEducations] = useState("");
+  const [id, setID] = useState("");
 
   // Add personal info
   const addPersonalInfo = (personalInfo) => {
@@ -35,22 +35,21 @@ function App() {
 
   // Add work experience form
   const addWorkExperienceForm = () => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+
     setWorkExperienceForms(
       workExperienceForms.concat(
-        <AddWorkExperience
-          key={workExperienceForms.length}
-          onAdd={addWorkExperience}
-        />
+        <AddWorkExperience key={id} onAdd={addWorkExperience} id={id} />
       )
     );
   };
 
   // Add work experience
   const addWorkExperience = (workExperience) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-
-    const newWorkExperience = { id, ...workExperience };
+    // add if the item does not already exist
+    const newWorkExperience = { ...workExperience };
     setWorkExperiences([...workExperiences, newWorkExperience]);
+    // edit if the item already exist
   };
 
   // Add education
@@ -62,16 +61,12 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <main className="container">
       <div className="forms">
         <p>Enter Your Information</p>
         <h2>Personal Information</h2>
         <AddPersonalInfo onAdd={addPersonalInfo} />
-        <Header
-          title="Work Experience"
-          onAdd={() => setShowAddWorkExperience(!showAddWorkExperience)}
-          showAdd={showAddWorkExperience}
-        />
+        <Header title="Work Experience" />
         {workExperienceForms}
         <Button
           color="green"
@@ -106,7 +101,7 @@ function App() {
           "No education"
         )}
       </div>
-    </div>
+    </main>
   );
 }
 

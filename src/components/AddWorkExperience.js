@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddWorkExperience = ({ onAdd }) => {
+const AddWorkExperience = ({ onAdd, id }) => {
   const [position, setPosition] = useState("");
   const [organization, setOrganization] = useState("");
   const [description, setDescription] = useState("");
@@ -15,17 +15,12 @@ const AddWorkExperience = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ position, organization, description, startDate, endDate });
-
-    setPosition("");
-    setOrganization("");
-    setDescription("");
-    setStartDate("");
-    setEndDate("");
+    console.log(e);
+    onAdd({ id, position, organization, description, startDate, endDate });
   };
 
   return (
-    <form className="add-form" onSubmit={onSubmit}>
+    <form className="add-form" onSubmit={onSubmit} id={id}>
       <div className="form-control">
         <input
           type="text"
@@ -44,7 +39,7 @@ const AddWorkExperience = ({ onAdd }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           cols="50"
-          rows="10"
+          rows="3"
         />
         <label htmlFor="">Start date</label>
         <input
