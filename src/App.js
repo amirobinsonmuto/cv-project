@@ -10,27 +10,14 @@ import { useState } from "react";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState("");
-  const [workExperiences, setWorkExperiences] = useState("");
   const [workExperienceForms, setWorkExperienceForms] = useState([]);
+  const [workExperiences, setWorkExperiences] = useState("");
   const [showAddEducation, setShowAddEducation] = useState(false);
   const [educations, setEducations] = useState("");
-  const [id, setID] = useState("");
 
   // Add personal info
   const addPersonalInfo = (personalInfo) => {
     setPersonalInfo(personalInfo);
-  };
-
-  // Delete work experience
-  const deleteWorkExperience = (id) => {
-    setWorkExperiences(
-      workExperiences.filter((workExperience) => workExperience.id !== id)
-    );
-  };
-
-  // Delete education
-  const deleteEducation = (id) => {
-    setEducations(educations.filter((education) => education.id !== id));
   };
 
   // Add work experience form
@@ -39,9 +26,24 @@ function App() {
 
     setWorkExperienceForms(
       workExperienceForms.concat(
-        <AddWorkExperience key={id} onAdd={addWorkExperience} id={id} />
+        <AddWorkExperience
+          key={id}
+          onAdd={addWorkExperience}
+          onDelete={deleteWorkExperienceForm}
+          id={id}
+        />
       )
     );
+  };
+
+  // Delete work experience form
+  const deleteWorkExperienceForm = (id) => {
+    setWorkExperienceForms(
+      workExperienceForms.filter(
+        (workExperienceForm) => workExperienceForm.key !== id
+      )
+    );
+    console.log(id);
   };
 
   // Add work experience
@@ -52,12 +54,24 @@ function App() {
     // edit if the item already exist
   };
 
+  // Delete work experience
+  const deleteWorkExperience = (id) => {
+    setWorkExperiences(
+      workExperiences.filter((workExperience) => workExperience.id !== id)
+    );
+  };
+
   // Add education
   const addEducation = (education) => {
     const id = Math.floor(Math.random() * 10000) + 1;
 
     const newEducation = { id, ...education };
     setEducations([...educations, newEducation]);
+  };
+
+  // Delete education
+  const deleteEducation = (id) => {
+    setEducations(educations.filter((education) => education.id !== id));
   };
 
   return (

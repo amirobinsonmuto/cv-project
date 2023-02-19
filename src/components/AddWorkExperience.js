@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddWorkExperience = ({ onAdd, id }) => {
+const AddWorkExperience = ({ onAdd, id, onDelete }) => {
   const [position, setPosition] = useState("");
   const [organization, setOrganization] = useState("");
   const [description, setDescription] = useState("");
@@ -15,12 +15,11 @@ const AddWorkExperience = ({ onAdd, id }) => {
       return;
     }
 
-    console.log(e);
     onAdd({ id, position, organization, description, startDate, endDate });
   };
 
   return (
-    <form className="add-form" onSubmit={onSubmit} id={id}>
+    <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
         <input
           type="text"
@@ -55,6 +54,12 @@ const AddWorkExperience = ({ onAdd, id }) => {
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" />
+      <input
+        type="Button"
+        value="Delete"
+        className="btn btn-block"
+        onClick={() => onDelete(id)}
+      />
     </form>
   );
 };
