@@ -53,12 +53,13 @@ const AddWorkExperience = ({ onAdd, id, onDelete }) => {
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
-      <input type="submit" value="Save" className="btn btn-block" />
+      <input type="submit" value="Save" className="btn btn-block" readOnly />
       <input
         type="Button"
         value="Delete"
         className="btn btn-block"
         onClick={() => onDelete(id)}
+        readOnly
       />
     </form>
   );
