@@ -37,15 +37,17 @@ function App() {
   };
 
   // Delete work experience form
-  const deleteWorkExperienceForm = (id) => {
-    setWorkExperienceForms(
-      workExperienceForms.filter(
-        (workExperienceForm) => workExperienceForm.key !== id
-      )
-    );
-    setWorkExperiences(
-      workExperiences.filter((workExperience) => workExperience.id !== id)
-    );
+  const deleteWorkExperienceForm = () => {
+    console.log(workExperienceForms);
+
+    // setWorkExperienceForms(
+    //   workExperienceForms.filter(
+    //     (workExperienceForm) => workExperienceForm.key !== id
+    //   )
+    // );
+    // setWorkExperiences(
+    //   workExperiences.filter((workExperience) => workExperience.id !== id)
+    // );
   };
 
   // Add work experience
@@ -80,7 +82,7 @@ function App() {
         <Button
           color="green"
           className="btn btn-block"
-          text="Add"
+          text="Add Work Experience"
           onClick={addWorkExperienceForm}
         />
 
