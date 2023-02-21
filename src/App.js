@@ -29,20 +29,16 @@ function App() {
   };
 
   // Delete work experience form
-  const deleteWorkExperienceForm = () => {
-    setWorkExperienceForms((real) => {
-      console.log("updated", real);
-      return real;
-    });
-
-    // setWorkExperienceForms(
-    //   workExperienceForms.filter(
-    //     (workExperienceForm) => workExperienceForm.key !== id
-    //   )
-    // );
-    // setWorkExperiences(
-    //   workExperiences.filter((workExperience) => workExperience.id !== id)
-    // );
+  const deleteWorkExperienceForm = (id) => {
+    setWorkExperienceForms(
+      workExperienceForms.filter(
+        (workExperienceForm) => workExperienceForm.id !== id
+      )
+    );
+    console.log(workExperienceForms);
+    setWorkExperiences(
+      workExperiences.filter((workExperience) => workExperience.id !== id)
+    );
   };
 
   // Add work experience
