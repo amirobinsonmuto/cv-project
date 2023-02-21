@@ -1,21 +1,26 @@
 import { useState } from "react";
 
-const AddWorkExperience = ({ onAdd, id, onDelete }) => {
+const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
   const [position, setPosition] = useState("");
   const [organization, setOrganization] = useState("");
   const [description, setDescription] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!position) {
-      alert("Please add a position");
-      return;
+    if (isClicked === false) {
+      if (!position) {
+        alert("Please add a position");
+        return;
+      }
+      onAdd({ id, position, organization, description, startDate, endDate });
+      setIsClicked(true);
+    } else {
+      onUpdate({ id, position, organization, description, startDate, endDate });
     }
-
-    onAdd({ id, position, organization, description, startDate, endDate });
   };
 
   return (

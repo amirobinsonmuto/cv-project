@@ -4,6 +4,7 @@ const RenderWorkExperienceForms = ({
   workExperienceForms,
   onAdd,
   onDelete,
+  onUpdate,
 }) => {
   return (
     <>
@@ -13,6 +14,7 @@ const RenderWorkExperienceForms = ({
           key={workExperienceForm.id}
           onAdd={onAdd}
           onDelete={onDelete}
+          onUpdate={onUpdate}
         />
       ))}
     </>

@@ -1,6 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 
-const WorkExperience = ({ workExperience, onDelete }) => {
+const WorkExperience = ({ workExperience }) => {
   return (
     <div className="work-experience">
       <div className="flex">

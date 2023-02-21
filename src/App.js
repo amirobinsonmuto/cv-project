@@ -28,23 +28,41 @@ function App() {
     setWorkExperienceForms(workExperienceForms.concat(newWorkExperienceForm));
   };
 
-  // Delete work experience form
-  const deleteWorkExperienceForm = (id) => {
+  // Add work experience
+  const addWorkExperience = (workExperience) => {
+    const newWorkExperience = { ...workExperience };
+    setWorkExperiences([...workExperiences, newWorkExperience]);
+  };
+
+  // update work experience
+  const updateWorkExperience = (updatedWorkExperience) => {
+    const matchedWorkExperience = workExperiences.find(
+      (workExperience) => workExperience.id === updatedWorkExperience.id
+    );
+    const index = workExperiences.indexOf(matchedWorkExperience);
+
+    // 1. Make a shallow copy of the workExperiences state
+    let workExperiencesCopy = [...workExperiences];
+    // 2. find the object I want to replace with
+    let item = workExperiencesCopy[index];
+    // 3. Replace the object
+    item = updatedWorkExperience;
+    // 4. Put it back into our array
+    workExperiencesCopy[index] = item;
+    // 5. Set the copy array to the state
+    setWorkExperiences(workExperiencesCopy);
+  };
+
+  // Delete work experience form and item
+  const deleteWorkExperience = (id) => {
     setWorkExperienceForms(
       workExperienceForms.filter(
         (workExperienceForm) => workExperienceForm.id !== id
       )
     );
-    console.log(workExperienceForms);
     setWorkExperiences(
       workExperiences.filter((workExperience) => workExperience.id !== id)
     );
-  };
-
-  // Add work experience
-  const addWorkExperience = (workExperience) => {
-    const newWorkExperience = { ...workExperience };
-    setWorkExperiences([...workExperiences, newWorkExperience]);
   };
 
   // Add education
@@ -70,7 +88,8 @@ function App() {
         <RenderWorkExperienceForms
           workExperienceForms={workExperienceForms}
           onAdd={addWorkExperience}
-          onDelete={deleteWorkExperienceForm}
+          onUpdate={updateWorkExperience}
+          onDelete={deleteWorkExperience}
         />
         <Button
           color="green"
