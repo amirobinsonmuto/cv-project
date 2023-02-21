@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import AddPersonalInfo from "./components/AddPersonalInfo";
-import AddWorkExperience from "./components/AddWorkExperience";
+import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
 import AddEducation from "./components/AddEducation";
 import PersonalInfo from "./components/PersonalInfo";
 import WorkExperiences from "./components/WorkExperiences";
@@ -23,22 +23,17 @@ function App() {
   // Add work experience form
   const addWorkExperienceForm = () => {
     const id = Math.floor(Math.random() * 10000) + 1;
+    const newWorkExperienceForm = { id };
 
-    setWorkExperienceForms(
-      workExperienceForms.concat(
-        <AddWorkExperience
-          key={id}
-          onAdd={addWorkExperience}
-          onDelete={deleteWorkExperienceForm}
-          id={id}
-        />
-      )
-    );
+    setWorkExperienceForms(workExperienceForms.concat(newWorkExperienceForm));
   };
 
   // Delete work experience form
   const deleteWorkExperienceForm = () => {
-    console.log(workExperienceForms);
+    setWorkExperienceForms((real) => {
+      console.log("updated", real);
+      return real;
+    });
 
     // setWorkExperienceForms(
     //   workExperienceForms.filter(
@@ -52,10 +47,8 @@ function App() {
 
   // Add work experience
   const addWorkExperience = (workExperience) => {
-    // add if the item does not already exist
     const newWorkExperience = { ...workExperience };
     setWorkExperiences([...workExperiences, newWorkExperience]);
-    // edit if the item already exist
   };
 
   // Add education
@@ -78,7 +71,11 @@ function App() {
         <h2>Personal Information</h2>
         <AddPersonalInfo onAdd={addPersonalInfo} />
         <Header title="Work Experience" />
-        {workExperienceForms}
+        <RenderWorkExperienceForms
+          workExperienceForms={workExperienceForms}
+          onAdd={addWorkExperience}
+          onDelete={deleteWorkExperienceForm}
+        />
         <Button
           color="green"
           className="btn btn-block"
