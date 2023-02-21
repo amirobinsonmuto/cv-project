@@ -1,10 +1,10 @@
 import Education from "./Education";
 
-const Educations = ({ educations, onDelete }) => {
+const Educations = ({ educations }) => {
   return (
     <>
       {educations.map((education) => (
-        <Education education={education} onDelete={onDelete} />
+        <Education key={education.id} education={education} />
       ))}
     </>
   );

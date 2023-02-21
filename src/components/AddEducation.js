@@ -1,23 +1,24 @@
 import { useState } from "react";
 
-const AddEducation = ({ onAdd }) => {
+const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
   const [school, setSchool] = useState("");
   const [program, setProgram] = useState("");
   const [year, setYear] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!program) {
-      alert("Please enter school");
-      return;
+    if (isClicked === false) {
+      if (!school) {
+        alert("Please add a school");
+        return;
+      }
+      onAdd({ id, school, program, year });
+      setIsClicked(true);
+    } else {
+      onUpdate({ id, school, program, year });
     }
-
-    onAdd({ school, program, year });
-
-    setSchool("");
-    setProgram("");
-    setYear("");
   };
 
   return (
@@ -42,7 +43,14 @@ const AddEducation = ({ onAdd }) => {
           onChange={(e) => setYear(e.target.value)}
         />
       </div>
-      <input type="submit" value="Save" className="btn btn-block" />
+      <input type="submit" value="Save" className="btn btn-block" readOnly />
+      <input
+        type="Button"
+        value="Delete"
+        className="btn btn-block"
+        onClick={() => onDelete(id)}
+        readOnly
+      />
     </form>
   );
 };

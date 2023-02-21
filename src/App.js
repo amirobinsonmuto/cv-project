@@ -1,10 +1,10 @@
 import Header from "./components/Header";
-import AddPersonalInfo from "./components/AddPersonalInfo";
-import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
-import AddEducation from "./components/AddEducation";
 import PersonalInfo from "./components/PersonalInfo";
+import AddPersonalInfo from "./components/AddPersonalInfo";
 import WorkExperiences from "./components/WorkExperiences";
+import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
 import Educations from "./components/Educations";
+import RenderEducationForms from "./components/RenderEducationForms";
 import Button from "./components/Button";
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState("");
   const [workExperienceForms, setWorkExperienceForms] = useState([]);
   const [workExperiences, setWorkExperiences] = useState("");
-  const [showAddEducation, setShowAddEducation] = useState(false);
+  const [educationForms, setEducationForms] = useState([]);
   const [educations, setEducations] = useState("");
 
   // Add personal info
@@ -65,6 +65,14 @@ function App() {
     );
   };
 
+  // Add work education form
+  const addEducationForm = () => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newEducationForm = { id };
+
+    setEducationForms(educationForms.concat(newEducationForm));
+  };
+
   // Add education
   const addEducation = (education) => {
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -73,8 +81,30 @@ function App() {
     setEducations([...educations, newEducation]);
   };
 
+  // update education
+  const updateEducation = (updatedEducation) => {
+    const matchedEducation = educations.find(
+      (education) => education.id === updatedEducation.id
+    );
+    const index = educations.indexOf(matchedEducation);
+
+    // 1. Make a shallow copy of the workExperiences state
+    let educationsCopy = [...educations];
+    // 2. find the object I want to replace with
+    let item = educationsCopy[index];
+    // 3. Replace the object
+    item = updatedEducation;
+    // 4. Put it back into our array
+    educationsCopy[index] = item;
+    // 5. Set the copy array to the state
+    setEducations(educationsCopy);
+  };
+
   // Delete education
   const deleteEducation = (id) => {
+    setEducationForms(
+      educationForms.filter((educationForm) => educationForm.id !== id)
+    );
     setEducations(educations.filter((education) => education.id !== id));
   };
 
@@ -98,12 +128,19 @@ function App() {
           onClick={addWorkExperienceForm}
         />
 
-        <Header
-          title="Education"
-          onAdd={() => setShowAddEducation(!showAddEducation)}
-          showAdd={showAddEducation}
+        <Header title="Education" />
+        <RenderEducationForms
+          educationForms={educationForms}
+          onAdd={addEducation}
+          onUpdate={updateEducation}
+          onDelete={deleteEducation}
         />
-        {showAddEducation && <AddEducation onAdd={addEducation} />}
+        <Button
+          color="green"
+          className="btn btn-block"
+          text="Add Education"
+          onClick={addEducationForm}
+        />
       </div>
 
       <div className="resume">
