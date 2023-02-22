@@ -7,6 +7,7 @@ import Educations from "./components/Educations";
 import RenderEducationForms from "./components/RenderEducationForms";
 import Button from "./components/Button";
 import { useState } from "react";
+import jsPDF from "jspdf";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState("");
@@ -88,15 +89,10 @@ function App() {
     );
     const index = educations.indexOf(matchedEducation);
 
-    // 1. Make a shallow copy of the workExperiences state
     let educationsCopy = [...educations];
-    // 2. find the object I want to replace with
     let item = educationsCopy[index];
-    // 3. Replace the object
     item = updatedEducation;
-    // 4. Put it back into our array
     educationsCopy[index] = item;
-    // 5. Set the copy array to the state
     setEducations(educationsCopy);
   };
 
@@ -106,6 +102,23 @@ function App() {
       educationForms.filter((educationForm) => educationForm.id !== id)
     );
     setEducations(educations.filter((education) => education.id !== id));
+  };
+
+  // Save the resume as PDF
+  const saveAsPDF = () => {
+    const doc = new jsPDF({
+      format: "a4",
+      unit: "px",
+    });
+    doc.setFont('"Poppins", sans-serif;');
+    const resumeElement = document.getElementById("resume");
+    doc.html(resumeElement, {
+      async callback(doc) {
+        const pageCount = doc.internal.getNumberOfPages();
+        doc.deletePage(pageCount);
+        await doc.save("Your-resume");
+      },
+    });
   };
 
   return (
@@ -142,25 +155,32 @@ function App() {
           onClick={addEducationForm}
         />
       </div>
-
-      <div className="resume">
-        <PersonalInfo personalInfo={personalInfo} />
-        <div className="resume-work-experience">
-          <h2 className="blue-text">Work Experience</h2>
-          {workExperiences.length > 0 ? (
-            <WorkExperiences workExperiences={workExperiences} />
-          ) : (
-            "No work experience"
-          )}
+      <div className="resume-container">
+        <div className="resume" id="resume">
+          <PersonalInfo personalInfo={personalInfo} />
+          <div className="resume-work-experience">
+            <h2 className="blue-text">Work Experience</h2>
+            {workExperiences.length > 0 ? (
+              <WorkExperiences workExperiences={workExperiences} />
+            ) : (
+              "No work experience"
+            )}
+          </div>
+          <div className="resume-education">
+            <h2 className="blue-text">Education</h2>
+            {educations.length > 0 ? (
+              <Educations educations={educations} onDelete={deleteEducation} />
+            ) : (
+              "No education"
+            )}
+          </div>
         </div>
-        <div className="resume-education">
-          <h2 className="blue-text">Education</h2>
-          {educations.length > 0 ? (
-            <Educations educations={educations} onDelete={deleteEducation} />
-          ) : (
-            "No education"
-          )}
-        </div>
+        <Button
+          color="rgb(20, 62, 114)"
+          className="btn btn-block add-btn"
+          text="Save as PDF"
+          onClick={saveAsPDF}
+        />
       </div>
     </main>
   );

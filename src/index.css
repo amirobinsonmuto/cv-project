@@ -25,6 +25,7 @@ h3 {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .forms {
@@ -126,16 +127,18 @@ footer {
   justify-content: space-between;
 }
 
+.resume-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10;
+}
+
 .resume {
   background-color: #fff;
   margin: 30px auto;
-  width: 210mm;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
-  height: 297mm;
-  /* padding: 30px; */
+  width: 450px;
+  height: 842px;
+  /* align-self: flex-start; */
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
