@@ -97,6 +97,7 @@ h3 {
   padding: 3px 7px;
   font-size: 17px;
   font-family: "Poppins", sans-serif;
+  white-space: pre-wrap;
 }
 
 .form-control-check {
