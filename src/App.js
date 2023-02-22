@@ -176,7 +176,7 @@ function App() {
           </div>
         </div>
         <Button
-          color="rgb(20, 62, 114)"
+          color="green"
           className="btn btn-block add-btn"
           text="Save as PDF"
           onClick={saveAsPDF}

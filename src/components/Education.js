@@ -1,8 +1,8 @@
 const Education = ({ education }) => {
   return (
     <div className="flex">
-      <h3>{education.program}</h3>
-      <h4>{education.school}</h4>
+      <h4>{education.program}</h4>
+      <p>{education.school}</p>
       <p>{education.year}</p>
     </div>
   );

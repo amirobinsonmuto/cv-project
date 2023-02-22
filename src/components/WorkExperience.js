@@ -1,5 +1,3 @@
-import { FaTimes } from "react-icons/fa";
-
 const WorkExperience = ({ workExperience }) => {
   return (
     <div>

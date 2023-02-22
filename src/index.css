@@ -23,9 +23,7 @@ h3 {
 
 .container {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  padding: 2rem;
 }
 
 .forms {
@@ -35,6 +33,49 @@ h3 {
   border-radius: 5px;
   width: 210mm;
   background-color: #fff;
+}
+
+.resume-container {
+  position: -webkit-sticky;
+  width: 450px;
+  height: 700px;
+  position: sticky;
+  align-self: flex-start;
+  top: 10;
+  margin: 30px auto;
+}
+
+.resume {
+  background-color: #fff;
+  width: 450px;
+  height: 650px;
+  /* align-self: flex-start; */
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  color: rgb(51, 51, 51);
+}
+
+.resume h1 {
+  font-size: 18px;
+}
+
+.resume h2 {
+  font-size: 16px;
+}
+
+.resume h3 {
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 10px;
+}
+
+.resume h4 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.resume p {
+  font-size: 10px;
+  line-height: 14px;
 }
 
 .header {
@@ -125,21 +166,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.resume-container {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 10;
-}
-
-.resume {
-  background-color: #fff;
-  margin: 30px auto;
-  width: 450px;
-  height: 842px;
-  /* align-self: flex-start; */
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
 .resume-personal-info {
