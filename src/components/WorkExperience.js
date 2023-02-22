@@ -1,6 +1,6 @@
 const WorkExperience = ({ workExperience }) => {
   return (
-    <div>
+    <div className="work-experience">
       <div className="flex">
         <h3>{workExperience.position}</h3>
         <p>
