@@ -123,7 +123,7 @@ function App() {
         />
         <Button
           color="green"
-          className="btn btn-block"
+          className="btn btn-block add-btn"
           text="Add Work Experience"
           onClick={addWorkExperienceForm}
         />
@@ -137,7 +137,7 @@ function App() {
         />
         <Button
           color="green"
-          className="btn btn-block"
+          className="btn btn-block add-btn"
           text="Add Education"
           onClick={addEducationForm}
         />
@@ -145,18 +145,22 @@ function App() {
 
       <div className="resume">
         <PersonalInfo personalInfo={personalInfo} />
-        <h2>Work Experience</h2>
-        {workExperiences.length > 0 ? (
-          <WorkExperiences workExperiences={workExperiences} />
-        ) : (
-          "No work experience"
-        )}
-        <h2>Education</h2>
-        {educations.length > 0 ? (
-          <Educations educations={educations} onDelete={deleteEducation} />
-        ) : (
-          "No education"
-        )}
+        <div className="resume-work-experience">
+          <h2 className="blue-text">Work Experience</h2>
+          {workExperiences.length > 0 ? (
+            <WorkExperiences workExperiences={workExperiences} />
+          ) : (
+            "No work experience"
+          )}
+        </div>
+        <div className="resume-education">
+          <h2 className="blue-text">Education</h2>
+          {educations.length > 0 ? (
+            <Educations educations={educations} onDelete={deleteEducation} />
+          ) : (
+            "No education"
+          )}
+        </div>
       </div>
     </main>
   );

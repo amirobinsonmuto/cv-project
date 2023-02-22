@@ -2,7 +2,7 @@ import { FaTimes } from "react-icons/fa";
 
 const WorkExperience = ({ workExperience }) => {
   return (
-    <div className="work-experience">
+    <div>
       <div className="flex">
         <h3>{workExperience.position}</h3>
         <p>

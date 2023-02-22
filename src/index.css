@@ -8,37 +8,40 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* font-size: 1.6rem; */
+  background-color: rgb(204, 204, 204);
+  color: rgb(51, 51, 51);
+}
+
+h3 {
+  margin-top: 0.8rem;
+}
+
+.blue-text {
+  color: rgb(20, 62, 114);
 }
 
 .container {
   display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .forms {
   margin: 30px auto;
-  border: 1px solid steelblue;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   padding: 30px;
   border-radius: 5px;
-  width: 30vw;
-}
-
-.resume {
-  margin: 30px auto;
   width: 210mm;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
-  height: 297mm;
-  padding: 30px;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  background-color: #fff;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .btn {
@@ -47,12 +50,16 @@ body {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin-bottom: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+}
+
+.add-btn {
+  margin-top: 15px;
 }
 
 .btn:focus {
@@ -66,10 +73,6 @@ body {
 .btn-block {
   display: block;
   width: 100%;
-}
-
-.add-form {
-  margin-bottom: 40px;
 }
 
 .form-control {
@@ -116,13 +119,32 @@ footer {
   text-align: center;
 }
 
-.education-resume-section {
-  display: flex;
-  gap: 2rem;
-}
-
 .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.resume {
+  background-color: #fff;
+  margin: 30px auto;
+  width: 210mm;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 297mm;
+  /* padding: 30px; */
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+.resume-personal-info {
+  background-color: rgb(20, 62, 114);
+  color: #fff;
+  padding: 1rem;
+}
+
+.resume-work-experience,
+.resume-education {
+  padding: 1rem;
 }
