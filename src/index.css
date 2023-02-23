@@ -161,3 +161,7 @@ body {
 .work-experience {
   margin-bottom: 5px;
 }
+
+.hidden {
+  display: none;
+}

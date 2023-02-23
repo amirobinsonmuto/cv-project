@@ -11,7 +11,7 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (isClicked === false) {
+    if (!isClicked) {
       if (!position) {
         alert("Please add a position");
         return;
@@ -46,7 +46,22 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
           rows="3"
         />
         <div className="form-control-check">
-          <input type="checkbox" id="current-role" />
+          <input
+            type="checkbox"
+            // value={isCurrentRole}
+            onChange={(e) => {
+              const endDateInput = document.getElementById("end-date-input");
+              const endDateLabel = document.getElementById("end-date-label");
+              if (e.target.checked === true) {
+                endDateInput.classList.add("hidden");
+                endDateLabel.classList.add("hidden");
+                setEndDate("Present");
+              } else {
+                endDateInput.classList.remove("hidden");
+                endDateLabel.classList.remove("hidden");
+              }
+            }}
+          />
           <label htmlFor="current-role">
             I am currently working in this role
           </label>
@@ -58,11 +73,14 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
           />
-          <label htmlFor="">To</label>
+          <label htmlFor="" id="end-date-label">
+            To
+          </label>
           <input
             type="month"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
+            id="end-date-input"
           />
         </div>
       </div>
