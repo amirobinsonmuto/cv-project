@@ -12,10 +12,10 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
     e.preventDefault();
 
     if (!isClicked) {
-      if (!position) {
-        alert("Please add a position");
-        return;
-      }
+      // if (!position) {
+      //   alert("Please add a position");
+      //   return;
+      // }
       onAdd({ id, position, organization, description, startDate, endDate });
       setIsClicked(true);
     } else {
@@ -41,15 +41,17 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
       <div className="form-control">
         <input
           type="text"
-          placeholder="Position"
+          placeholder="Position*"
           value={position}
           onChange={(e) => setPosition(e.target.value)}
+          required
         />
         <input
           type="text"
-          placeholder="Organization"
+          placeholder="Organization*"
           value={organization}
           onChange={(e) => setOrganization(e.target.value)}
+          required
         />
         <textarea
           placeholder="Description"

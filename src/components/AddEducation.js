@@ -26,21 +26,24 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
       <div className="form-control">
         <input
           type="text"
-          placeholder="Program"
+          placeholder="Program*"
           value={program}
           onChange={(e) => setProgram(e.target.value)}
+          required
         />
         <input
           type="text"
-          placeholder="School"
+          placeholder="School*"
           value={school}
           onChange={(e) => setSchool(e.target.value)}
+          required
         />
         <input
           type="number"
-          placeholder="Graduation Year"
+          placeholder="Graduation Year*"
           value={year}
           onChange={(e) => setYear(e.target.value)}
+          required
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />

@@ -21,20 +21,23 @@ const AddPersonalInfo = ({ onAdd }) => {
       <div className="form-control">
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Name*"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <input
           type="text"
-          placeholder="Email"
+          placeholder="Email*"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
-          placeholder="Phone number"
+          placeholder="Phone number*"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          required
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" />

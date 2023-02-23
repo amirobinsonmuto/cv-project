@@ -124,7 +124,7 @@ function App() {
   return (
     <main className="container">
       <div className="forms">
-        <p>Enter Your Information</p>
+        <p>Enter Your Information * = required field</p>
         <h2>Personal Information</h2>
         <AddPersonalInfo onAdd={addPersonalInfo} />
         <Header title="Work Experience" />
