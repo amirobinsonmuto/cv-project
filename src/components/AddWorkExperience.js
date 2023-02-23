@@ -23,6 +23,19 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
     }
   };
 
+  const isCurrentRole = (e) => {
+    const endDateInput = document.getElementById("end-date-input");
+    const endDateLabel = document.getElementById("end-date-label");
+    if (e.target.checked === true) {
+      endDateInput.classList.add("hidden");
+      endDateLabel.classList.add("hidden");
+      setEndDate("Present");
+    } else {
+      endDateInput.classList.remove("hidden");
+      endDateLabel.classList.remove("hidden");
+    }
+  };
+
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
@@ -46,21 +59,7 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
           rows="3"
         />
         <div className="form-control-check">
-          <input
-            type="checkbox"
-            onChange={(e) => {
-              const endDateInput = document.getElementById("end-date-input");
-              const endDateLabel = document.getElementById("end-date-label");
-              if (e.target.checked === true) {
-                endDateInput.classList.add("hidden");
-                endDateLabel.classList.add("hidden");
-                setEndDate("Present");
-              } else {
-                endDateInput.classList.remove("hidden");
-                endDateLabel.classList.remove("hidden");
-              }
-            }}
-          />
+          <input type="checkbox" onChange={(e) => isCurrentRole(e)} />
           <label htmlFor="current-role">
             I am currently working in this role
           </label>
