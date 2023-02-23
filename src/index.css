@@ -19,16 +19,17 @@ body {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
-  height: 100%;
+  /* flex-wrap: wrap; */
+  gap: 80px;
+  min-height: 100vh;
 }
 
 .forms {
-  margin: 30px auto;
+  margin: 30px 0px 30px auto;
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   padding: 30px;
   border-radius: 5px;
-  max-width: 210mm;
+  max-width: 760px;
   background-color: #fff;
 }
 
@@ -39,7 +40,20 @@ body {
   position: sticky;
   align-self: flex-start;
   top: 0;
-  margin: 30px auto;
+  margin: 30px auto 0px 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .forms {
+    margin: 30px auto;
+  }
+  .resume-container {
+    margin: 0px auto 30px auto;
+  }
 }
 
 .resume {
