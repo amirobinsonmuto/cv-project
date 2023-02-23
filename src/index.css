@@ -19,7 +19,6 @@ body {
 
 .container {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 80px;
   min-height: 100vh;
 }
