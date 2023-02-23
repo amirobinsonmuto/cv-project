@@ -12,10 +12,6 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
     e.preventDefault();
 
     if (!isClicked) {
-      // if (!position) {
-      //   alert("Please add a position");
-      //   return;
-      // }
       onAdd({ id, position, organization, description, startDate, endDate });
       setIsClicked(true);
     } else {

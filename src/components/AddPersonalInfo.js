@@ -7,12 +7,6 @@ const AddPersonalInfo = ({ onAdd }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if (!name || !email || !phone) {
-      alert("Please fill out the personal information");
-      return;
-    }
-
     onAdd({ name, email, phone });
   };
 
