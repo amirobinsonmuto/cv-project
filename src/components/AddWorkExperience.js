@@ -45,18 +45,26 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
           cols="50"
           rows="3"
         />
-        <label htmlFor="">Start date</label>
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-        <label htmlFor="">End date</label>
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-        />
+        <div className="form-control-check">
+          <input type="checkbox" id="current-role" />
+          <label htmlFor="current-role">
+            I am currently working in this role
+          </label>
+        </div>
+        <div className="flex">
+          <label htmlFor="">From</label>
+          <input
+            type="month"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+          <label htmlFor="">To</label>
+          <input
+            type="month"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+        </div>
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />
       <input
