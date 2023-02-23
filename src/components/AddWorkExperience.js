@@ -48,7 +48,6 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
         <div className="form-control-check">
           <input
             type="checkbox"
-            // value={isCurrentRole}
             onChange={(e) => {
               const endDateInput = document.getElementById("end-date-input");
               const endDateLabel = document.getElementById("end-date-label");

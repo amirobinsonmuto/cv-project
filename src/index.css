@@ -124,6 +124,10 @@ body {
   font-size: 17px;
 }
 
+.form-control input {
+  font-family: "Poppins", sans-serif;
+}
+
 .form-control textarea {
   width: 100%;
   margin: 5px;
