@@ -179,6 +179,6 @@ body {
   margin-bottom: 5px;
 }
 
-.hidden {
-  display: none;
+.disabled {
+  color: rgb(206, 204, 204);
 }
