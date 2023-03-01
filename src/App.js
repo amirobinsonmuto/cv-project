@@ -1,11 +1,11 @@
-import Header from "./components/Header";
+import Header from "./components/elements/Header";
 import PersonalInfo from "./components/PersonalInfo";
 import AddPersonalInfo from "./components/AddPersonalInfo";
 import WorkExperiences from "./components/WorkExperiences";
 import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
 import Educations from "./components/Educations";
 import RenderEducationForms from "./components/RenderEducationForms";
-import Button from "./components/Button";
+import Button from "./components/elements/Button";
 import { useState } from "react";
 import jsPDF from "jspdf";
 
