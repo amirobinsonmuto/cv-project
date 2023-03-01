@@ -30,8 +30,7 @@ function App() {
   };
 
   // Add work experience
-  const addWorkExperience = (workExperience) => {
-    const newWorkExperience = { ...workExperience };
+  const addWorkExperience = (newWorkExperience) => {
     setWorkExperiences([...workExperiences, newWorkExperience]);
   };
 
@@ -75,10 +74,7 @@ function App() {
   };
 
   // Add education
-  const addEducation = (education) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-
-    const newEducation = { id, ...education };
+  const addEducation = (newEducation) => {
     setEducations([...educations, newEducation]);
   };
 
@@ -125,7 +121,7 @@ function App() {
     <main className="container">
       <div className="forms">
         <p>Enter Your Information * = required field</p>
-        <h2>Personal Information</h2>
+        <Header title="Personal Info" />
         <AddPersonalInfo onAdd={addPersonalInfo} />
         <Header title="Work Experience" />
         <RenderWorkExperienceForms
