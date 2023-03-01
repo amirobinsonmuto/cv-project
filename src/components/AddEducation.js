@@ -6,11 +6,9 @@ import MonthYearPicker from "./elements/MonthYearPicker";
 const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
   const [school, setSchool] = useState("");
   const [program, setProgram] = useState("");
-  const [year, setYear] = useState("");
   const [isPresent, setIsPresent] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-
   const [isClicked, setIsClicked] = useState(false);
 
   const onSubmit = (e) => {
