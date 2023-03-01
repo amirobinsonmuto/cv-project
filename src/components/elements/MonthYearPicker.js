@@ -41,9 +41,9 @@ const MonthYearPicker = ({
 MonthYearPicker.propTypes = {
   doIfCurrent: PropTypes.func.isRequired,
   currentText: PropTypes.string.isRequired,
-  startDate: PropTypes.object.isRequired,
+  startDate: PropTypes.string.isRequired,
   setStartDate: PropTypes.func.isRequired,
-  endDate: PropTypes.object.isRequired,
+  endDate: PropTypes.string.isRequired,
   setEndDate: PropTypes.func.isRequired,
   isPresent: PropTypes.bool.isRequired,
 };
