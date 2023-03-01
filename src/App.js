@@ -1,7 +1,7 @@
 import Header from "./components/elements/Header";
 import PersonalInfo from "./components/PersonalInfo";
 import AddPersonalInfo from "./components/AddPersonalInfo";
-import WorkExperiences from "./components/WorkExperiences";
+import MapArr from "./components/MapArr";
 import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
 import Educations from "./components/Educations";
 import RenderEducationForms from "./components/RenderEducationForms";
@@ -157,7 +157,7 @@ function App() {
           <div className="resume-work-experience">
             <h2 className="blue-text">Work Experience</h2>
             {workExperiences.length > 0 ? (
-              <WorkExperiences workExperiences={workExperiences} />
+              <MapArr arr={workExperiences} type="workExperience" />
             ) : (
               "No work experience"
             )}
@@ -165,7 +165,7 @@ function App() {
           <div className="resume-education">
             <h2 className="blue-text">Education</h2>
             {educations.length > 0 ? (
-              <Educations educations={educations} onDelete={deleteEducation} />
+              <MapArr arr={educations} type="education" />
             ) : (
               "No education"
             )}
