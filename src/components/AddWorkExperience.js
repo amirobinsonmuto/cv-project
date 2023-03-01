@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import MonthYearPicker from "./elements/MonthYearPicker";
 
 const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
   const [position, setPosition] = useState("");
@@ -8,6 +9,7 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const [isPresent, setIsPresent] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -20,16 +22,12 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
     }
   };
 
-  const isCurrentRole = (e) => {
-    const endDateInput = document.getElementById("end-date-input");
-    const endDateLabel = document.getElementById("end-date-label");
+  const doIfCurrent = (e) => {
     if (e.target.checked === true) {
-      endDateInput.classList.add("hidden");
-      endDateLabel.classList.add("hidden");
       setEndDate("Present");
+      setIsPresent(true);
     } else {
-      endDateInput.classList.remove("hidden");
-      endDateLabel.classList.remove("hidden");
+      setIsPresent(false);
     }
   };
 
@@ -57,29 +55,15 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
           cols="50"
           rows="3"
         />
-        <div className="form-control-check">
-          <input type="checkbox" onChange={(e) => isCurrentRole(e)} />
-          <label htmlFor="current-role">
-            I am currently working in this role
-          </label>
-        </div>
-        <div className="flex">
-          <label htmlFor="">From</label>
-          <input
-            type="month"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-          <label htmlFor="" id="end-date-label">
-            To
-          </label>
-          <input
-            type="month"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            id="end-date-input"
-          />
-        </div>
+        <MonthYearPicker
+          currentText="working in this role"
+          doIfCurrent={doIfCurrent}
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          isPresent={isPresent}
+        />
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />
       <input
