@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
   const [school, setSchool] = useState("");
@@ -56,6 +57,13 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
       />
     </form>
   );
+};
+
+AddEducation.propTypes = {
+  id: PropTypes.number.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default AddEducation;

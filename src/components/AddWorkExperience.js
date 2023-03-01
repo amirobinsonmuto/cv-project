@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
@@ -90,6 +91,13 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
       />
     </form>
   );
+};
+
+AddWorkExperience.propTypes = {
+  id: PropTypes.number.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default AddWorkExperience;

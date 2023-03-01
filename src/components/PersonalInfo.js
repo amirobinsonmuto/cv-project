@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const PersonalInfo = ({ personalInfo }) => {
   return (
     <div className="resume-personal-info">
@@ -6,6 +8,10 @@ const PersonalInfo = ({ personalInfo }) => {
       <p>{personalInfo.phone}</p>
     </div>
   );
+};
+
+PersonalInfo.propTypes = {
+  personalInfo: PropTypes.object.isRequired,
 };
 
 export default PersonalInfo;

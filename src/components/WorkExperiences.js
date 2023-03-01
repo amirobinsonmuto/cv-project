@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import WorkExperience from "./WorkExperience";
 
 const WorkExperiences = ({ workExperiences }) => {
@@ -11,6 +12,10 @@ const WorkExperiences = ({ workExperiences }) => {
       ))}
     </>
   );
+};
+
+WorkExperiences.propTypes = {
+  workExperiences: PropTypes.array.isRequired,
 };
 
 export default WorkExperiences;

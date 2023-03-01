@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import AddWorkExperience from "./AddWorkExperience";
 
 const RenderWorkExperienceForms = ({
@@ -19,6 +20,13 @@ const RenderWorkExperienceForms = ({
       ))}
     </>
   );
+};
+
+RenderWorkExperienceForms.propTypes = {
+  workExperienceForms: PropTypes.array.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default RenderWorkExperienceForms;

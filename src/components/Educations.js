@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Education from "./Education";
 
 const Educations = ({ educations }) => {
@@ -8,6 +9,10 @@ const Educations = ({ educations }) => {
       ))}
     </>
   );
+};
+
+Educations.propTypes = {
+  educations: PropTypes.object.isRequired,
 };
 
 export default Educations;

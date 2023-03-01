@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const WorkExperience = ({ workExperience }) => {
   return (
     <div className="work-experience">
@@ -11,6 +13,10 @@ const WorkExperience = ({ workExperience }) => {
       <p>{workExperience.description}</p>
     </div>
   );
+};
+
+WorkExperience.propTypes = {
+  text: PropTypes.object.isRequired,
 };
 
 export default WorkExperience;
