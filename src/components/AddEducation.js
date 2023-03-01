@@ -1,10 +1,16 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
+import MonthYearPicker from "./elements/MonthYearPicker";
+
 const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
   const [school, setSchool] = useState("");
   const [program, setProgram] = useState("");
   const [year, setYear] = useState("");
+  const [isPresent, setIsPresent] = useState(false);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+
   const [isClicked, setIsClicked] = useState(false);
 
   const onSubmit = (e) => {
@@ -15,10 +21,19 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
         alert("Please add a school");
         return;
       }
-      onAdd({ id, school, program, year });
+      onAdd({ id, school, program, startDate, endDate });
       setIsClicked(true);
     } else {
-      onUpdate({ id, school, program, year });
+      onUpdate({ id, school, program, startDate, endDate });
+    }
+  };
+
+  const doIfCurrent = (e) => {
+    if (e.target.checked === true) {
+      setEndDate("Present");
+      setIsPresent(true);
+    } else {
+      setIsPresent(false);
     }
   };
 
@@ -39,12 +54,14 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
           onChange={(e) => setSchool(e.target.value)}
           required
         />
-        <input
-          type="number"
-          placeholder="Graduation Year*"
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          required
+        <MonthYearPicker
+          currentText="enrolled to this program"
+          doIfCurrent={doIfCurrent}
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+          isPresent={isPresent}
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />

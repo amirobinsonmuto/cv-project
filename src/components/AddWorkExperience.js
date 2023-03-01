@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+
 import MonthYearPicker from "./elements/MonthYearPicker";
 
 const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
   const [position, setPosition] = useState("");
   const [organization, setOrganization] = useState("");
   const [description, setDescription] = useState("");
+  const [isPresent, setIsPresent] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-  const [isPresent, setIsPresent] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
