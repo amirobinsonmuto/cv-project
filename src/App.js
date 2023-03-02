@@ -2,8 +2,7 @@ import Header from "./components/elements/Header";
 import PersonalInfo from "./components/PersonalInfo";
 import AddPersonalInfo from "./components/AddPersonalInfo";
 import MapArr from "./components/MapArr";
-import RenderWorkExperienceForms from "./components/RenderWorkExperienceForms";
-import Educations from "./components/Educations";
+import RenderForms from "./components/RenderForms";
 import RenderEducationForms from "./components/RenderEducationForms";
 import Button from "./components/elements/Button";
 import { useState } from "react";
@@ -124,8 +123,9 @@ function App() {
         <Header title="Personal Info" />
         <AddPersonalInfo onAdd={addPersonalInfo} />
         <Header title="Work Experience" />
-        <RenderWorkExperienceForms
-          workExperienceForms={workExperienceForms}
+        <RenderForms
+          type="workExperience"
+          forms={workExperienceForms}
           onAdd={addWorkExperience}
           onUpdate={updateWorkExperience}
           onDelete={deleteWorkExperience}
@@ -138,8 +138,9 @@ function App() {
         />
 
         <Header title="Education" />
-        <RenderEducationForms
-          educationForms={educationForms}
+        <RenderForms
+          type="education"
+          forms={educationForms}
           onAdd={addEducation}
           onUpdate={updateEducation}
           onDelete={deleteEducation}

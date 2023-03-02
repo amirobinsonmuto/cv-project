@@ -1,19 +1,19 @@
 import PropTypes from "prop-types";
 
-const Education = ({ education }) => {
+const Education = ({ obj }) => {
   return (
     <div className="flex">
-      <h4>{education.program}</h4>
-      <p>{education.school}</p>
+      <h4>{obj.program}</h4>
+      <p>{obj.school}</p>
       <p>
-        {education.startDate} - {education.endDate}
+        {obj.startDate} - {obj.endDate}
       </p>
     </div>
   );
 };
 
 Education.propTypes = {
-  education: PropTypes.object.isRequired,
+  obj: PropTypes.object.isRequired,
 };
 
 export default Education;
