@@ -1,14 +1,23 @@
 import PropTypes from "prop-types";
 
 const MonthYearPicker = ({
-  doIfCurrent,
   currentText,
   startDate,
   setStartDate,
   endDate,
   setEndDate,
   isPresent,
+  setIsPresent,
 }) => {
+  const doIfCurrent = (e) => {
+    if (e.target.checked === true) {
+      setEndDate("Present");
+      setIsPresent(true);
+    } else {
+      setIsPresent(false);
+    }
+  };
+
   return (
     <div>
       <div className="form-control-check">
@@ -46,6 +55,7 @@ MonthYearPicker.propTypes = {
   endDate: PropTypes.string.isRequired,
   setEndDate: PropTypes.func.isRequired,
   isPresent: PropTypes.bool.isRequired,
+  setIsPresent: PropTypes.func.isRequired,
 };
 
 export default MonthYearPicker;

@@ -14,24 +14,11 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (isClicked === false) {
-      if (!school) {
-        alert("Please add a school");
-        return;
-      }
+    if (!isClicked) {
       onAdd({ id, school, program, startDate, endDate });
       setIsClicked(true);
     } else {
       onUpdate({ id, school, program, startDate, endDate });
-    }
-  };
-
-  const doIfCurrent = (e) => {
-    if (e.target.checked === true) {
-      setEndDate("Present");
-      setIsPresent(true);
-    } else {
-      setIsPresent(false);
     }
   };
 
@@ -54,12 +41,12 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
         />
         <MonthYearPicker
           currentText="enrolled to this program"
-          doIfCurrent={doIfCurrent}
           startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
           isPresent={isPresent}
+          setIsPresent={setIsPresent}
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />

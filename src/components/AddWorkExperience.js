@@ -23,15 +23,6 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
     }
   };
 
-  const doIfCurrent = (e) => {
-    if (e.target.checked === true) {
-      setEndDate("Present");
-      setIsPresent(true);
-    } else {
-      setIsPresent(false);
-    }
-  };
-
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
@@ -58,12 +49,12 @@ const AddWorkExperience = ({ id, onAdd, onDelete, onUpdate }) => {
         />
         <MonthYearPicker
           currentText="working in this role"
-          doIfCurrent={doIfCurrent}
           startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
           isPresent={isPresent}
+          setIsPresent={setIsPresent}
         />
       </div>
       <input type="submit" value="Save" className="btn btn-block" readOnly />
