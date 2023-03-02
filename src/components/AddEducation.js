@@ -40,7 +40,7 @@ const AddEducation = ({ id, onAdd, onDelete, onUpdate }) => {
           required
         />
         <MonthYearPicker
-          currentText="enrolled to this program"
+          currentText="enrolled in this program"
           startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
