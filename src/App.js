@@ -1,10 +1,11 @@
+import { useState } from "react";
+
 import Header from "./components/elements/Header";
 import PersonalInfo from "./components/PersonalInfo";
 import AddPersonalInfo from "./components/AddPersonalInfo";
 import MapArr from "./components/MapArr";
 import RenderForms from "./components/RenderForms";
 import Button from "./components/elements/Button";
-import { useState } from "react";
 import jsPDF from "jspdf";
 
 function App() {

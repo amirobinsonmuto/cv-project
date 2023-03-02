@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 
