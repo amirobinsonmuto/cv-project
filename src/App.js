@@ -3,7 +3,6 @@ import PersonalInfo from "./components/PersonalInfo";
 import AddPersonalInfo from "./components/AddPersonalInfo";
 import MapArr from "./components/MapArr";
 import RenderForms from "./components/RenderForms";
-import RenderEducationForms from "./components/RenderEducationForms";
 import Button from "./components/elements/Button";
 import { useState } from "react";
 import jsPDF from "jspdf";
