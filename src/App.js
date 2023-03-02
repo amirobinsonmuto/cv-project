@@ -20,7 +20,7 @@ function App() {
   };
 
   // Add work experience form
-  const addWorkExperienceForm = () => {
+  const addWorkExperienceForm = (type) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     const newWorkExperienceForm = { id };
 
@@ -32,22 +32,17 @@ function App() {
     setWorkExperiences([...workExperiences, newWorkExperience]);
   };
 
-  // update work experience
+  // Update work experience
   const updateWorkExperience = (updatedWorkExperience) => {
     const matchedWorkExperience = workExperiences.find(
       (workExperience) => workExperience.id === updatedWorkExperience.id
     );
     const index = workExperiences.indexOf(matchedWorkExperience);
 
-    // 1. Make a shallow copy of the workExperiences state
     let workExperiencesCopy = [...workExperiences];
-    // 2. find the object I want to replace with
     let item = workExperiencesCopy[index];
-    // 3. Replace the object
     item = updatedWorkExperience;
-    // 4. Put it back into our array
     workExperiencesCopy[index] = item;
-    // 5. Set the copy array to the state
     setWorkExperiences(workExperiencesCopy);
   };
 
@@ -76,7 +71,7 @@ function App() {
     setEducations([...educations, newEducation]);
   };
 
-  // update education
+  // Update education
   const updateEducation = (updatedEducation) => {
     const matchedEducation = educations.find(
       (education) => education.id === updatedEducation.id
